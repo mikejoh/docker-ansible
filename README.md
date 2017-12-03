@@ -19,5 +19,6 @@ ansible-docker-playbook -i hosts example-playbook.yml
 * Use a mount or volume to add your local ansible project to the container
 * Are python base image the slimmest way to do this? Probably not, investigate!
 * Add more advanced example with vault password files and encrypted yml files
+* Find a way to pass environment variables for proxies in a more dynamic way (?)
 
 Enjoy!
