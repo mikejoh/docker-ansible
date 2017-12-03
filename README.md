@@ -1,5 +1,9 @@
 # docker-ansible
-Yet another Docker container to use as a replacement to your local ansible installation. Based on the python:2.7.14 image.
+Yet another Docker container to use as a replacement to your local ansible installation. 
+
+This is a work in progress, see the Todo section below.
+
+Based on the python:2.7.14 image.
 
 ## Getting started
 1. Build the image.
@@ -10,10 +14,11 @@ docker build . -t docker-ansible
 ```
 alias ansible-docker-playbook="docker run --rm -it docker-ansible"
 ```
-3. Run the example playbook i've created to test this
+3. Run the example playbook i've created to test this.
 ```
 ansible-docker-playbook -i hosts example-playbook.yml
 ```
+4. Add your project to the ansible-directory in this repository, and run a playbook.
 
 ## Todo
 * Use a mount or volume to add your local ansible project to the container
