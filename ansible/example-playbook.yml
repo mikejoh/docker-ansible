@@ -1,0 +1,8 @@
+---
+
+- name: Example playbook
+  hosts: localhost
+  connection: local
+  tasks:
+    - include_role:
+        name: example
