@@ -12,7 +12,7 @@ docker build . -t docker-ansible
 ```
 2. Create a useful alias command.
 ```
-alias ansible-docker-playbook="docker run --rm -it docker-ansible"
+alias ansible-docker-playbook="docker run --volume $(pwd)/ansible:/ansible --rm -it docker-ansible"
 ```
 3. Run the example playbook i've created to test this.
 ```
@@ -21,9 +21,9 @@ ansible-docker-playbook -i hosts example-playbook.yml
 4. Add your project to the ansible-directory in this repository, and run a playbook.
 
 ## Todo
-* Use a mount or volume to add your local ansible project to the container
-* Are python base image the slimmest way to do this? Probably not, investigate!
-* Add more advanced example with vault password files and encrypted yml files
-* Find a way to pass environment variables for proxies in a more dynamic way (?)
+[X] Use a mount or volume to add your local ansible project to the container
+[ ] Are python base image the slimmest way to do this? Probably not, investigate!
+[ ] Add more advanced example with vault password files and encrypted yml files
+[ ] Find a way to pass environment variables for proxies in a more dynamic way (?)
 
 Enjoy!
