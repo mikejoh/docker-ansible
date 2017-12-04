@@ -20,12 +20,19 @@ ansible-docker-playbook -i hosts example-playbook.yml
 ```
 4. Now just `cd` into your ansible playbook directory and run `ansible-docker-playbook`
 
+## Notes
+
+* Regarding Ansible Vault and your own projects, you could add the following `-v ~/.vault_pass.txt:/root/.vault_pass.txt` to the Docker run command above. This would make your vault password file accessible within the container, but via the home directory of `root`. We should not run ansible as root within the container!
+* In this example the `.vault_pass.txt` will be configured as default via `ansible.cfg`, this means that when you encrypt a file with `ansible-vault encrypt` the passphrase contained within the `~/.vault_pass.txt` file would be used.
+
 ## Todo
 [X] Use a mount or volume to add your local ansible project to the container
 
 [X] Are python base image the slimmest way to do this? Probably not, investigate!
 
-[ ] Add more advanced example with vault password files and encrypted yml files
+[ ] Run ansible as a non-root user
+
+[ ] Add more advanced example with vault password files and encrypted yml files
 
 [ ] Find a way to pass environment variables for proxies in a more dynamic way (?)
 
