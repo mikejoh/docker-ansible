@@ -10,7 +10,7 @@ Based on the ~~`python:2.7.14`~~ `alpine:edge` image (~757MB vs. ~97MB).
 ```
 docker build . -t docker-ansible
 ```
-2. Create a useful alias command, note that the run command mounts the local directory relative from where you ran the ansible-docker-playbook alias command.
+2. Create a useful alias command, note that the run command mounts the local directory relative from where you ran the ansible-docker-playbook alias command. Add the alias to your shell profile/rc-file to make the alias command persistent.
 ```
 alias ansible-docker-playbook='docker container run -v $(pwd):/ansible --rm -it docker-ansible'
 ```
