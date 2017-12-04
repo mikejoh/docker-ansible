@@ -1,5 +1,8 @@
-FROM python:2.7.14
+FROM alpine:edge
 MAINTAINER mikejoh
-RUN pip install ansible
+RUN apk add --no-cache \
+    ca-certificates \
+    python \
+    ansible
 WORKDIR /ansible
 ENTRYPOINT ["ansible-playbook"]
