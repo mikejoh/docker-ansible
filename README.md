@@ -10,15 +10,15 @@ Based on the python:2.7.14 image.
 ```
 docker build . -t docker-ansible
 ```
-2. Create a useful alias command.
+2. Create a useful alias command, note that the run command mounts the local directory relative from where you ran the ansible-docker-playbook alias command.
 ```
-alias ansible-docker-playbook="docker run --volume $(pwd)/ansible:/ansible --rm -it docker-ansible"
+alias ansible-docker-playbook='docker container run -v $(pwd):/ansible --rm -it docker-ansible'
 ```
 3. Run the example playbook i've created to test this.
 ```
 ansible-docker-playbook -i hosts example-playbook.yml
 ```
-4. Add your project to the ansible-directory in this repository, and run a playbook.
+4. Now just `cd` into your ansible playbook directory and run `ansible-docker-playbook`
 
 ## Todo
 [X] Use a mount or volume to add your local ansible project to the container
