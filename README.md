@@ -3,7 +3,7 @@ Yet another Docker container to use as a replacement to your local ansible insta
 
 This is a work in progress, see the Todo section below.
 
-Based on the python:2.7.14 image.
+Based on the ~~`python:2.7.14`~~ `alpine:edge` image (~757MB vs. ~97MB).
 
 ## Getting started
 1. Build the image.
@@ -23,7 +23,7 @@ ansible-docker-playbook -i hosts example-playbook.yml
 ## Todo
 [X] Use a mount or volume to add your local ansible project to the container
 
-[ ] Are python base image the slimmest way to do this? Probably not, investigate!
+[X] Are python base image the slimmest way to do this? Probably not, investigate!
 
 [ ] Add more advanced example with vault password files and encrypted yml files
 
